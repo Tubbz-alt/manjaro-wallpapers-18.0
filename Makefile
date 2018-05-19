@@ -10,9 +10,9 @@ INSTD 	   =	install -Dm644 -t
 	
 install:
 	./backgrounds-xml.sh
-	mkdir -p $(PREFIX)/share/gnome-background-properties
+	mkdir -p $(DXMLGNOME)
 	cp -f $(THEME).xml $(DXMLGNOME)
-	mkdir -p $(PREFIX)/share/mate-background-properties
+	mkdir -p $(DXMLMATE)
 	cp -f $(THEME).xml $(DXMLMATE)
 	$(INSTD) $(DPATH) *.jpg 
 	
