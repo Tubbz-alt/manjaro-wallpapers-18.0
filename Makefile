@@ -1,13 +1,22 @@
 #!/usr/bin/make -f
 
-THEME   =   manjaro-wallpappers-18.0
-PREFIX  = 	/usr
-DPATH 	=	$(DESTDIR)$(PREFIX)/share/backgrounds/$(THEME)
-DEL 	=  	rm -rf
-INSTD 	=	install -Dm644 -t
-
+THEME      =    manjaro-wallpapers-18.0
+PREFIX     = 	/usr
+DPATH 	   =	$(DESTDIR)$(PREFIX)/share/backgrounds/$(THEME)
+DXMLGNOME  =    $(DESTDIR)$(PREFIX)/share/gnome-background-properties
+DXMLMATE   =    $(DESTDIR)$(PREFIX)/share/mate-background-properties
+DEL 	   =  	rm -Rf
+INSTD 	   =	install -Dm644 -t
+	
 install:
-	$(INSTD) $(DPATH) *.jpg
+	./backgrounds-xml.sh
+	cp -f $(THEME).xml $(DXMLGNOME)
+	cp -f $(THEME).xml $(DXMLMATE)
+	$(INSTD) $(DPATH) *.jpg 
+	
+	
 uninstall:
-	$(DEL) $(DPATH)/*.jpg
-
+	$(DEL) $(DPATH)
+	rm -f $(DXMLGNOME)/$(THEME).xml
+	rm -f $(DXMLMATE)/$(THEME).xml
+ 

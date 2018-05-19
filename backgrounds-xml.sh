@@ -18,7 +18,7 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
 echo "OK. Now we are creating manjaro-$WALL.xml"
 
 # This script is looking for .png and .jpg files only, but you can add here another file types. The "<options>stretched</options>" should work best for unknow sized files.
-for i in $(ls *.png) $(ls *jpg); do
+for i in $(ls *jpg); do #Note if we add png files simply add $(ls *png)
 echo "<wallpaper>
 <name>${ABSPATH}$i</name>
 <filename>${ABSPATH}$i</filename>
