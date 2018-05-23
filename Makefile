@@ -1,8 +1,9 @@
 #!/usr/bin/make -f
 
 THEME      =    Illyria
+DTHEME     =	manjaro-wallpapers-18.0
 PREFIX     = 	/usr
-DPATH 	   =	$(DESTDIR)$(PREFIX)/share/backgrounds/$(THEME)
+DPATH 	   =	$(DESTDIR)$(PREFIX)/share/backgrounds/$(DTHEME)
 DXMLGNOME  =    $(DESTDIR)$(PREFIX)/share/gnome-background-properties
 DXMLMATE   =    $(DESTDIR)$(PREFIX)/share/mate-background-properties
 DEL 	   =  	rm -Rf
