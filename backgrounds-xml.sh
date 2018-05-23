@@ -2,7 +2,7 @@
 
 #set variable
 
-THEME=Illyria
+THEME=$(awk '/THEME/ {print $3; exit}' Makefile ) #set automatically name of theme from Makefile
 ABSPATH=/usr/share/backgrounds/$THEME/
 
 if [ -e $THEME.xml ]; then
